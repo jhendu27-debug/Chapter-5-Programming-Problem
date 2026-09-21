@@ -5,5 +5,8 @@ public class Main {
 
         System.out.println("Storage bay initialized.");
         System.out.println("Space suit initialized.");
+
+        System.out.println("\nCargo Manifest:");
+        storageBay.displayManifest();
     }
 }

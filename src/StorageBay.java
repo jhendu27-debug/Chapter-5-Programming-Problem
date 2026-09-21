@@ -14,4 +14,19 @@ public class StorageBay {
             }
         }
     }
+
+    public void displayManifest() {
+        for (CargoPod pod : pods) {
+            String status;
+
+            if (pod.isSalvaged()) {
+                status = "Salvaged";
+            } else {
+                status = "Sealed";
+            }
+
+            System.out.println("Pod " + pod.getId() + ": "
+                    + status + " [" + pod.getContents() + "]");
+        }
+    }
 }
