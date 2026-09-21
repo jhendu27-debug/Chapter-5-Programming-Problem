@@ -1,5 +1,9 @@
 public class Main {
-    static void main() {
-        System.out.println("Hello World!");
+    public static void main(String[] args) {
+        StorageBay storageBay = new StorageBay();
+        SpaceSuit spaceSuit = new SpaceSuit();
+
+        System.out.println("Storage bay initialized.");
+        System.out.println("Space suit initialized.");
     }
 }
