@@ -29,4 +29,33 @@ public class StorageBay {
                     + status + " [" + pod.getContents() + "]");
         }
     }
+
+    public boolean salvagePod(int index) {
+        if (index < 0 || index >= pods.length) {
+            System.out.println("Invalid pod index.");
+            return false;
+        }
+
+        CargoPod pod = pods[index];
+
+        if (pod.isSalvaged()) {
+            System.out.println("Pod " + index + " has already been salvaged.");
+            return false;
+        }
+
+        pod.setSalvaged(true);
+
+        System.out.println("Pod " + index + " opened.");
+
+        if (pod.getContents().equals("Power Cell")) {
+            System.out.println("You found the Power Cell!");
+            return true;
+        } else if (pod.getContents().equals("Hazardous Waste")) {
+            System.out.println("Warning: Hazardous Waste found.");
+        } else {
+            System.out.println("The pod is empty.");
+        }
+
+        return false;
+    }
 }
